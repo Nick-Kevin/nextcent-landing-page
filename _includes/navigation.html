@@ -1,19 +1,11 @@
-<nav>
-    <ul>
+<nav class="fixed w-full z-50 py-7 flex justify-center bg-white">
+    <ul class="flex gap-12 text-gray-900">
+        {% for item in site.data.navigation %}
         <li>
-            <a href="#">Home</a>
+            <a href="{{ item.link }}">
+                {{ item.name }}
+            </a>
         </li>
-        <li>
-            <a href="#">Service</a>
-        </li>
-        <li>
-            <a href="#">Feature</a>
-        </li>
-        <li>
-            <a href="#">Product</a>
-        </li>
-        <li>
-            <a href="#">Testimonial</a>
-        </li>
+        {% endfor %}
     </ul>
 </nav>
