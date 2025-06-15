@@ -1,4 +1,5 @@
-<nav class="fixed w-full z-50 py-7 flex justify-center bg-white">
+<nav class="fixed w-full px-28 z-50 py-7 flex justify-between bg-white">
+    <img src="/assets/images/Logo.svg" alt="logo nexcent" class="w-36">
     <ul class="flex gap-12 text-gray-900">
         {% for item in site.data.navigation %}
         <li>
@@ -7,5 +8,13 @@
             </a>
         </li>
         {% endfor %}
+    </ul>
+    <ul class="flex gap-7 text-sm">
+        <li>
+            <a href="#" class="text-green-1">Login</a>
+        </li>
+        <li>
+            <a href="#" class="bg-green-1 text-white py-2.5 px-4.5 rounded">Sign up</a>
+        </li>
     </ul>
 </nav>
