@@ -12,11 +12,11 @@ body {
     --color-neutral-grey: #4D4D4D;
     --color-neutral-silver: #F5F7FA;
     --color-grey: #717171;
-    --breakpoint-3xl: 120rem;
+    --breakpoint-3xl: 137.5rem;
     --secondary: #263238;
     --info: #2194F3;
 }
 
 nav, section {
-    @apply px-12 lg:px-20 xl:px-28 2xl:px-48 3xl:px-96;
+    @apply px-8 sm:px-12 lg:px-20 xl:px-28 2xl:px-48 3xl:px-96;
 }
