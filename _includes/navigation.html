@@ -1,6 +1,6 @@
-<nav class="fixed w-full px-28 z-50 py-7 flex justify-between bg-white">
-    <img src="/assets/images/Logo.svg" alt="logo nexcent" class="w-36">
-    <ul class="flex gap-12 text-gray-900">
+<nav class="fixed w-full px-12 lg:px-20 xl:px-28 2xl:px-48 3xl:px-96 z-50 py-7 2xl:py-12 justify-between bg-white hidden md:flex md:items-center">
+    <img src="{{ site.baseurl }}/assets/images/Logo.svg" alt="logo nexcent" class="w-20 lg:w-36 2xl:w-48 3xl:w-80">
+    <ul class="flex gap-5 lg:gap-8 xl:gap-12 2xl:gap-16 3xl:gap-36 text-gray-900">
         {% for item in site.data.navigation %}
         <li>
             <a href="{{ item.link }}">
@@ -9,12 +9,39 @@
         </li>
         {% endfor %}
     </ul>
-    <ul class="flex gap-7 text-sm">
+    <ul class="flex gap-4 lg:gap-7 2xl:gap-12 3xl:gap-28">
         <li>
             <a href="#" class="text-green-1">Login</a>
         </li>
         <li>
-            <a href="#" class="bg-green-1 text-white py-2.5 px-4.5 rounded">Sign up</a>
+            <a href="#" class="bg-green-1 text-white py-2.5 3xl:py-4 px-4.5 2xl:px-8 3xl:px-16 rounded">Sign up</a>
+        </li>
+    </ul>
+</nav>
+
+<div class="flex justify-between items-center md:hidden fixed z-50 w-full px-5 sm:px-12 py-5">
+    <img src="{{ site.baseurl }}/assets/images/Logo.svg" alt="logo nexcent" class="w-20">
+    <button onclick="toggleMenu()" class="icon">
+        <i class="fa fa-bars"></i>
+    </button>
+</div>
+
+<nav id="menu" class="hidden md:hidden w-full h-full bg-white fixed top-0 left-0 z-40">
+    <ul class="flex flex-col items-center gap-5 pt-16">
+        {% for item in site.data.navigation %}
+        <li>
+            <a href="{{ item.link }}">
+                {{ item.name }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+    <ul class="flex flex-col items-center gap-5 text-sm mt-10 px-5 sm:px-12">
+        <li class="w-full border border-green-1 text-center py-2 rounded">
+            <a href="#" class="text-green-1">Login</a>
+        </li>
+        <li class="w-full bg-green-1 text-center py-2 rounded">
+            <a href="#" class=" text-white">Sign up</a>
         </li>
     </ul>
 </nav>

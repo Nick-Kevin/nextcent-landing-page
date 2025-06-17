@@ -2,7 +2,8 @@
 
 @theme {
     --color-primary: #28CB8B;
+    --color-green-1: #4CAF4F;
+    --breakpoint-3xl: 120rem;
     --secondary: #263238;
     --info: #2194F3;
-    --color-green-1: #4CAF4F;
 }
