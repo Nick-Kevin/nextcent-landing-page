@@ -19,9 +19,29 @@
     </ul>
 </nav>
 
-<div class="flex justify-between items-center md:hidden fixed w-full px-5 sm:px-8 py-3">
+<div class="flex justify-between items-center md:hidden fixed z-50 w-full px-5 sm:px-8 py-3">
     <img src="{{ site.baseurl }}/assets/images/Logo.svg" alt="logo nexcent" class="w-20">
     <button onclick="toggleMenu()" class="icon">
         <i class="fa fa-bars"></i>
     </button>
 </div>
+
+<nav id="menu" class="hidden md:hidden w-full h-full bg-white fixed top-0 left-0 z-40">
+    <ul class="flex flex-col items-center gap-5 pt-16">
+        {% for item in site.data.navigation %}
+        <li>
+            <a href="{{ item.link }}">
+                {{ item.name }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+    <ul class="flex flex-col items-center gap-5 text-sm mt-10 px-5">
+        <li class="w-full border border-green-1 text-center py-2 rounded">
+            <a href="#" class="text-green-1">Login</a>
+        </li>
+        <li class="w-full bg-green-1 text-center py-2 rounded">
+            <a href="#" class=" text-white">Sign up</a>
+        </li>
+    </ul>
+</nav>
