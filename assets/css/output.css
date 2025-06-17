@@ -7,7 +7,6 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-red-500: oklch(63.7% 0.237 25.331);
     --color-gray-900: oklch(21% 0.034 264.665);
     --color-white: #fff;
     --spacing: 0.25rem;
@@ -17,11 +16,15 @@
     --text-base--line-height: calc(1.5 / 1);
     --text-lg: 1.125rem;
     --text-lg--line-height: calc(1.75 / 1.125);
-    --text-7xl: 4.5rem;
-    --text-7xl--line-height: 1;
+    --text-6xl: 3.75rem;
+    --text-6xl--line-height: 1;
+    --font-weight-semibold: 600;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
     --color-green-1: #4CAF4F;
+    --color-neutral-grey: #4D4D4D;
+    --color-neutral-silver: #F5F7FA;
+    --color-grey: #717171;
   }
 }
 @layer base {
@@ -206,8 +209,17 @@
       max-width: 120rem;
     }
   }
+  .mt-4 {
+    margin-top: calc(var(--spacing) * 4);
+  }
+  .mt-8 {
+    margin-top: calc(var(--spacing) * 8);
+  }
   .mt-10 {
     margin-top: calc(var(--spacing) * 10);
+  }
+  .block {
+    display: block;
   }
   .flex {
     display: flex;
@@ -218,11 +230,24 @@
   .h-full {
     height: 100%;
   }
+  .min-h-screen {
+    min-height: 100vh;
+  }
   .w-20 {
     width: calc(var(--spacing) * 20);
   }
+  .w-96 {
+    width: calc(var(--spacing) * 96);
+  }
   .w-full {
     width: 100%;
+  }
+  .grow {
+    flex-grow: 1;
+  }
+  .translate-y-14 {
+    --tw-translate-y: calc(var(--spacing) * 14);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
   }
   .flex-col {
     flex-direction: column;
@@ -233,11 +258,17 @@
   .justify-between {
     justify-content: space-between;
   }
+  .justify-center {
+    justify-content: center;
+  }
   .gap-4 {
     gap: calc(var(--spacing) * 4);
   }
   .gap-5 {
     gap: calc(var(--spacing) * 5);
+  }
+  .gap-32 {
+    gap: calc(var(--spacing) * 32);
   }
   .rounded {
     border-radius: 0.25rem;
@@ -252,8 +283,8 @@
   .bg-green-1 {
     background-color: var(--color-green-1);
   }
-  .bg-white {
-    background-color: var(--color-white);
+  .bg-neutral-silver {
+    background-color: var(--color-neutral-silver);
   }
   .px-4\.5 {
     padding-inline: calc(var(--spacing) * 4.5);
@@ -261,14 +292,17 @@
   .px-5 {
     padding-inline: calc(var(--spacing) * 5);
   }
-  .px-12 {
-    padding-inline: calc(var(--spacing) * 12);
+  .px-7 {
+    padding-inline: calc(var(--spacing) * 7);
   }
   .py-2 {
     padding-block: calc(var(--spacing) * 2);
   }
   .py-2\.5 {
     padding-block: calc(var(--spacing) * 2.5);
+  }
+  .py-3 {
+    padding-block: calc(var(--spacing) * 3);
   }
   .py-5 {
     padding-block: calc(var(--spacing) * 5);
@@ -279,16 +313,27 @@
   .pt-16 {
     padding-top: calc(var(--spacing) * 16);
   }
+  .pt-24 {
+    padding-top: calc(var(--spacing) * 24);
+  }
   .text-center {
     text-align: center;
   }
-  .text-7xl {
-    font-size: var(--text-7xl);
-    line-height: var(--tw-leading, var(--text-7xl--line-height));
+  .text-6xl {
+    font-size: var(--text-6xl);
+    line-height: var(--tw-leading, var(--text-6xl--line-height));
   }
   .text-sm {
     font-size: var(--text-sm);
     line-height: var(--tw-leading, var(--text-sm--line-height));
+  }
+  .leading-\[4\.5rem\] {
+    --tw-leading: 4.5rem;
+    line-height: 4.5rem;
+  }
+  .font-semibold {
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
   }
   .text-gray-900 {
     color: var(--color-gray-900);
@@ -296,8 +341,11 @@
   .text-green-1 {
     color: var(--color-green-1);
   }
-  .text-red-500 {
-    color: var(--color-red-500);
+  .text-grey {
+    color: var(--color-grey);
+  }
+  .text-neutral-grey {
+    color: var(--color-neutral-grey);
   }
   .text-white {
     color: var(--color-white);
@@ -315,6 +363,11 @@
   .md\:hidden {
     @media (width >= 48rem) {
       display: none;
+    }
+  }
+  .md\:flex-row {
+    @media (width >= 48rem) {
+      flex-direction: row;
     }
   }
   .md\:items-center {
@@ -337,11 +390,6 @@
       gap: calc(var(--spacing) * 8);
     }
   }
-  .lg\:px-20 {
-    @media (width >= 64rem) {
-      padding-inline: calc(var(--spacing) * 20);
-    }
-  }
   .lg\:text-base {
     @media (width >= 64rem) {
       font-size: var(--text-base);
@@ -351,11 +399,6 @@
   .xl\:gap-12 {
     @media (width >= 80rem) {
       gap: calc(var(--spacing) * 12);
-    }
-  }
-  .xl\:px-28 {
-    @media (width >= 80rem) {
-      padding-inline: calc(var(--spacing) * 28);
     }
   }
   .\32 xl\:w-48 {
@@ -376,11 +419,6 @@
   .\32 xl\:px-8 {
     @media (width >= 96rem) {
       padding-inline: calc(var(--spacing) * 8);
-    }
-  }
-  .\32 xl\:px-48 {
-    @media (width >= 96rem) {
-      padding-inline: calc(var(--spacing) * 48);
     }
   }
   .\32 xl\:py-12 {
@@ -408,11 +446,6 @@
       padding-inline: calc(var(--spacing) * 16);
     }
   }
-  .\33 xl\:px-96 {
-    @media (width >= 120rem) {
-      padding-inline: calc(var(--spacing) * 96);
-    }
-  }
   .\33 xl\:py-4 {
     @media (width >= 120rem) {
       padding-block: calc(var(--spacing) * 4);
@@ -425,15 +458,62 @@
     }
   }
 }
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+body {
+  font-family: "Inter", sans-serif;
+}
+nav, section {
+  padding-inline: calc(var(--spacing) * 12);
+  @media (width >= 64rem) {
+    padding-inline: calc(var(--spacing) * 20);
+  }
+  @media (width >= 80rem) {
+    padding-inline: calc(var(--spacing) * 28);
+  }
+  @media (width >= 96rem) {
+    padding-inline: calc(var(--spacing) * 48);
+  }
+  @media (width >= 120rem) {
+    padding-inline: calc(var(--spacing) * 96);
+  }
+}
+@property --tw-translate-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-translate-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-translate-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
 @property --tw-border-style {
   syntax: "*";
   inherits: false;
   initial-value: solid;
 }
+@property --tw-leading {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
+      --tw-translate-x: 0;
+      --tw-translate-y: 0;
+      --tw-translate-z: 0;
       --tw-border-style: solid;
+      --tw-leading: initial;
+      --tw-font-weight: initial;
     }
   }
 }
