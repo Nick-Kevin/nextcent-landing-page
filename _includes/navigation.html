@@ -1,4 +1,4 @@
-<nav class="fixed w-full px-28 z-50 py-7 flex justify-between bg-white">
+<nav class="fixed w-full px-28 z-50 py-7 justify-between bg-white hidden md:flex">
     <img src="{{ site.baseurl }}/assets/images/Logo.svg" alt="logo nexcent" class="w-36">
     <ul class="flex gap-12 text-gray-900">
         {% for item in site.data.navigation %}
@@ -18,3 +18,10 @@
         </li>
     </ul>
 </nav>
+
+<div class="flex justify-between items-center md:hidden fixed w-full px-5 sm:px-8 py-3">
+    <img src="{{ site.baseurl }}/assets/images/Logo.svg" alt="logo nexcent" class="w-20">
+    <button onclick="toggleMenu()" class="icon">
+        <i class="fa fa-bars"></i>
+    </button>
+</div>
