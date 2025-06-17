@@ -22,6 +22,7 @@
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
     --color-green-1: #4CAF4F;
+    --color-neutral-silver: #F5F7FA;
   }
 }
 @layer base {
@@ -261,6 +262,9 @@
   .bg-green-1 {
     background-color: var(--color-green-1);
   }
+  .bg-neutral-silver {
+    background-color: var(--color-neutral-silver);
+  }
   .bg-white {
     background-color: var(--color-white);
   }
@@ -281,12 +285,6 @@
   }
   .py-2\.5 {
     padding-block: calc(var(--spacing) * 2.5);
-  }
-  .py-3 {
-    padding-block: calc(var(--spacing) * 3);
-  }
-  .py-4 {
-    padding-block: calc(var(--spacing) * 4);
   }
   .py-5 {
     padding-block: calc(var(--spacing) * 5);
@@ -330,11 +328,6 @@
   .sm\:px-12 {
     @media (width >= 40rem) {
       padding-inline: calc(var(--spacing) * 12);
-    }
-  }
-  .sm\:py-5 {
-    @media (width >= 40rem) {
-      padding-block: calc(var(--spacing) * 5);
     }
   }
   .md\:flex {
@@ -416,16 +409,6 @@
   .\32 xl\:py-12 {
     @media (width >= 96rem) {
       padding-block: calc(var(--spacing) * 12);
-    }
-  }
-  .\33 xl\:w-60 {
-    @media (width >= 120rem) {
-      width: calc(var(--spacing) * 60);
-    }
-  }
-  .\33 xl\:w-72 {
-    @media (width >= 120rem) {
-      width: calc(var(--spacing) * 72);
     }
   }
   .\33 xl\:w-80 {
