@@ -45,18 +45,18 @@ title: Home
     </ul>
 </section>
 
-<section class="text-center">
+<section class="text-center pb-16">
     <h2><span class="md:block">Manage your entire community</span> in a signle system</h2>
     <p class="section-desc">Who is Nextcent suitable for?</p>
-    <div class="flex flex-col md:flex-row md:justify-between md:items-start my-2">
+    <div class="flex flex-col md:flex-row md:justify-center xl:justify-between 2xl:justify-around md:items-start md:flex-wrap my-2 max-xl:gap-8">
         {% for item in site.data.community %}
-    <div class="flex flex-col items-center gap-2.5 shadow px-6 py-8 rounded">
-        <img src="{{ site.baseurl }}/assets/images/{{ item.icon_link }}" alt="">
-        <h3 class="max-w-48">{{ item.title }}</h3>
+    <div class="flex flex-col items-center gap-2.5 3xl:gap-8 shadow px-6 2xl:px-8 3xl:px-12 py-8 2xl:py-10 3xl:py-16 rounded">
+        <img src="{{ site.baseurl }}/assets/images/{{ item.icon_link }}" alt="" class="3xl:w-36">
+        <h3 class="max-w-48 3xl:max-w-96">{{ item.title }}</h3>
         {% if item.id == 1 %}
-        <p class="text-sm max-w-64 text-grey px-2">{{ item.description }}</p>
+        <p class="text-sm 3xl:text-lg max-sm:max-w-64 md:max-w-64 3xl:max-w-80 text-grey max-md:px-2 lg:px-2">{{ item.description }}</p>
         {% else %}
-        <p class="text-sm max-w-64 text-grey">{{ item.description }}</p>
+        <p class="text-sm 3xl:text-lg max-sm:max-w-64 md:max-w-64 3xl:max-w-80 text-grey">{{ item.description }}</p>
         {% endif %}
     </div>
     {% endfor %}
