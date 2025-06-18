@@ -24,3 +24,11 @@ nav, section {
 h2 {
     @apply text-2xl md:text-4xl 3xl:text-6xl font-semibold text-neutral-grey;
 }
+
+h3 {
+    @apply text-xl md:text-3xl 3xl:text-5xl font-semibold text-neutral-grey;
+}
+
+.section-desc {
+    @apply mt-3.5 2xl:mt-4.5 3xl:mt-10 text-grey;
+}
