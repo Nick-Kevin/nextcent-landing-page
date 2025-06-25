@@ -1,11 +1,5 @@
 @import "tailwindcss";
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
-body {
-    font-family: "Inter", sans-serif;
-}
-
 @theme {
     --color-primary: #28CB8B;
     --color-green-1: #4CAF4F;
@@ -31,4 +25,8 @@ h3 {
 
 .section-desc {
     @apply mt-3.5 2xl:mt-4.5 3xl:mt-10 text-grey;
+}
+
+.section-more-padding {
+    @apply xl:px-36;
 }
